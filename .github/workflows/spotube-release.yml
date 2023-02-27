@@ -81,7 +81,7 @@ jobs:
       # using a versioned path for compatibility in gensums
       - run: mkdir -p build/${{ steps.tag.outputs.tag }}
       - run: appdmg appdmg.json build/${{ steps.tag.outputs.tag }}/Spotube-macos-x86_64.dmg
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: Spotube-Macos-Bundle
           path: |
@@ -152,7 +152,7 @@ jobs:
           echo '${{ secrets.KEY_PROPERTIES }}' > android/key.properties
           flutter build apk
           make apk
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: Spotube-Android-Bundle
           path: |
